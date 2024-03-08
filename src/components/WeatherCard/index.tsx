@@ -27,7 +27,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
 
   const celsiusTemp = useMemo(() => weather.temperature, [weather.temperature]);
   const fahrenheitTemp = useMemo(() => celsiusToFahrenheit(celsiusTemp), [celsiusTemp, celsiusToFahrenheit]);
-  const temperatureWithUnit = useMemo(() => unit === TemperatureUnit.C ? `${celsiusTemp.toFixed(1)}ºC` : `${fahrenheitTemp.toFixed(1)}ºF`, [unit, celsiusTemp, fahrenheitTemp]);
+  const temperatureWithUnit = useMemo(() => unit === TemperatureUnit.C ? `${celsiusTemp.toFixed(1)}°C` : `${fahrenheitTemp.toFixed(1)}°F`, [unit, celsiusTemp, fahrenheitTemp]);
 
   return (
     <tr className="weather-card" data-testid={`weather-card-${weather.id}`}>
